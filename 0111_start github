@@ -13,7 +13,7 @@
 #git status
 
 #5 히스토리 만들기
-# git commit -m "first commit"
+# git commit -m "first commit" <- 이름은 마음대로 가능
 
 #6 파일과 깃 리파지토리 사이 연결고리 만들기
 #git remote add origin https://github.com/JungAhJang/GDSC_2022_1st.git
@@ -21,8 +21,8 @@
 #7 연결고리 확인
 #git remote -v
 
-#8 마스터 브랜치로 코드 보내기(왜 해야하는거지?)
-#git push origin master
+#8 마스터 브랜치로 코드 보내기(왜 해야하는거지?->이거 안하면 안들어감)
+#git push origin master <-master는 branch 이름이 들어간다
 
 #9 깃허브에 계속 업데이트 하는 법
-#파일 더하기 -> 히스토리 만들기 -> push 하기
+#파일 더하기(#2) -> 히스토리 만들기(#5) -> push 하기(#8)
