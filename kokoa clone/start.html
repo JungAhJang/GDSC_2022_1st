@@ -1,4 +1,4 @@
-<!-- Today | 22.01.15
+<!-- Today | 22.01.17
 Theme | Nomad coder: kokoa clone coding
 TIL   | a tag, attribute -->
 
@@ -15,8 +15,30 @@ TIL   | a tag, attribute -->
   </head>
 
   <body>
-    <a href="http://www.google.com" target="_self"> Go to google.com </a>
+    <form>
+      <div>
+        <label for="profile"> profile photo </label>
+        <input id="profile" type="file" accept="image/*" />
+      </div>
+      <div>
+        <label for="website"> Website </label>
+        <input id="website" required placeholder="website" type="url" />
+      </div>
+      <div>
+        <input required placeholder="Last Name" type="text" />
+      </div>
 
-    <img src="콜리_BM.png" />
+      <div>
+        <input required placeholder="Username" type="text" />
+      </div>
+      <div>
+        <input required placeholder="password" minlength="1" type="password" />
+      </div>
+
+      <input type="submit" value="Create Account" />
+      <input type="range" />
+      <label for="date"> Choose the date </label>
+      <input id="date" type="date" />
+    </form>
   </body>
 </html>
