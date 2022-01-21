@@ -5,6 +5,9 @@ TIL   |  paddings and IDs -->
 <html lang="kr">
   <head>
     <style>
+      * {
+        border: 2px dashed black;
+      }
       html {
         background-color: tomato;
       }
@@ -17,7 +20,8 @@ TIL   |  paddings and IDs -->
 
       div {
         /* div 마진 값이 적용이 안된다! --> collapsing margin 현상 */
-        padding: 10px;
+        padding: 20px;
+        border: 2px solid black;
       }
 
       #first {
@@ -31,20 +35,10 @@ TIL   |  paddings and IDs -->
         width: 100px;
         height: 100px;
       }
-      #thrid { <!--thrid가 반영 안된것 같은데 왜지?-->
+      #thrid {
         background-color: wheat;
         width: 50px;
         height: 50px;
-      }
-
-      #fourth {
-        background-color: red;
-        width: 25px;
-        height: 25px;
-      }
-
-      span {
-        background-color: turquoise;
       }
     </style>
   </head>
@@ -52,18 +46,9 @@ TIL   |  paddings and IDs -->
     <div id="first">
       <div id="second">
         <div id="third">
-          <div id="fourth"></div>
+          <span>hello</span>
         </div>
       </div>
     </div>
-
-    <span> hello </span>
-    <!--스팬은 inline-->
-    <span> hello </span>
-    <span> hello </span>
-    <a href="#"> link</a>
-    <span> hello </span>
-    <address>is it bolck?</address>
-    <!--adress는 블락-->
   </body>
 </html>
