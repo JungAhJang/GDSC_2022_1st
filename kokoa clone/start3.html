@@ -1,6 +1,6 @@
-<!-- Today | 22.01.21
+<!-- Today | 22.01.22
 Theme | Nomad coder: kokoa clone coding
-TIL   |  classes-->
+TIL   |  inline-block, Flexbox -->
 
 <!DOCTYPE html>
 
@@ -8,9 +8,16 @@ TIL   |  classes-->
   <head>
     <style>
       body {
-        margin: 20px;
+        display: flex;
+        margin: 50px;
+        height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
       }
-      span {
+      div {
+        width: 50px;
+        height: 50px;
         background-color: teal;
       }
       .tomato {
@@ -26,14 +33,14 @@ TIL   |  classes-->
         padding: 5px 10px;
         border-radius: 10px;
       }
+      #second {
+        background-color: wheat;
+      }
     </style>
   </head>
   <body>
-    <span class="btn tomato">hello</span>
-    <span class="btn teal">hello</span>
-    <span class="btn teal">hello</span>
-    <span class="btn tomato">hello</span>
-    <span class="btn teal">hello</span>
-    <span class="btn tomato">hello</span>
+    <div>1</div>
+    <div id="second">2</div>
+    <div>3</div>
   </body>
 </html>
