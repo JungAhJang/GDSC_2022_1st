@@ -1,0 +1,31 @@
+<!-- Today | 22.01.25
+Theme | Nomad coder: kokoa clone coding
+TIL   |  Transitions-->
+
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <title>Junga Times</title>
+    <style>
+      a {
+        color: wheat;
+        background-color: tomato;
+        text-decoration: none;
+        padding: 3px 5px;
+        border-radius: 5px;
+        font-size: 100px;
+        transition: background-color 10s ease-in-out, color 5s ease-in-out;
+        transition: all 5s ease;
+      }
+      a:hover {
+        /* a의 속성을 유지하면서, 바뀌는 속성만 지정해줌 */
+        color: tomato;
+        background-color: wheat;
+      }
+      /* 상태를 지정했지만 갑자기 변함. 부드럽지X */
+    </style>
+  </head>
+  <body>
+    <a href="#">Go home</a>
+  </body>
+</html>
