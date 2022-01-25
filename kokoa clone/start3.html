@@ -1,6 +1,6 @@
-<!-- Today | 22.01.24
+<!-- Today | 22.01.25
 Theme | Nomad coder: kokoa clone coding
-TIL   |  assignment-->
+TIL   |  some states, pseudo elements-->
 
 <!DOCTYPE html>
 
@@ -15,11 +15,7 @@ TIL   |  assignment-->
         align-items: center;
         flex-direction: column;
       }
-      div {
-        width: 50px;
-        height: 50px;
-        background-color: teal;
-      }
+
       .tomato {
         background-color: tomato;
         color: white;
@@ -39,11 +35,68 @@ TIL   |  assignment-->
       div span {
         text-decoration: underline;
       }
+
+      input::placeholder {
+        color: yellowgreen;
+      }
+      /* input:focus {
+        background-color: tomato;
+      } */
+      p::selection {
+        color: white;
+        background-color: yellowgreen;
+      }
+      p::first-letter {
+        color: white;
+        font-size: 50px;
+        background-color: yellowgreen;
+      }
+      button:hover {
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+      }
+      a:visited {
+        color: tomato;
+      }
+      a:hover {
+        color: teal;
+      }
+      a:focus {
+        color: turquoise;
+      }
+      form {
+        border: 1px solid salmon;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+      }
+      form:focus-within {
+        border-color: green;
+      }
+      form:hover input {
+        background-color: sienna;
+      }
+      /* form:hover input:focus {
+        width: 100px;
+        height: 100px;
+      } */
     </style>
   </head>
   <body>
-    <div>1</div>
-    <div id="second">2</div>
-    <div>3<span>4</span></div>
+    <a href="https://apple.com">go to apple</a>
+    <p>가나다라마바사아자차카타파하</p>
+    <div>
+      <button>Hello</button>
+    </div>
+    <!-- <div>
+      <input type="text" />
+      <input type="text" />
+    </div> -->
+    <form>
+      <input type="text" name="" id="" />
+      <input type="text" name="" id="" />
+      <input type="text" name="" id="" />
+    </form>
   </body>
 </html>
