@@ -14,18 +14,76 @@ TIL   |  Transitions-->
         padding: 3px 5px;
         border-radius: 5px;
         font-size: 100px;
-        transition: background-color 10s ease-in-out, color 5s ease-in-out;
-        transition: all 5s ease;
+        /* transition: background-color 10s ease-in-out, color 5s ease-in-out; */
+        transition: all 1000ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
       }
       a:hover {
         /* a의 속성을 유지하면서, 바뀌는 속성만 지정해줌 */
+        border-radius: 20px;
         color: tomato;
         background-color: wheat;
       }
       /* 상태를 지정했지만 갑자기 변함. 부드럽지X */
+
+      img {
+        border: 5px solid black;
+        border-radius: 50%;
+      }
+      /* transform: rotateY(55deg) rotateX(20deg);
+        transition: transform 5s ease-in-out; */
+
+      /*
+      img:hover {
+        transform: rotateY(55deg) rotateX(360deg) rotateZ(90deg) scale(0.5); 
+      }  */
+      /* 만약 Z만 변경하고 싶다면, 원래거의 X,Y속성도 가져와야함*/
+      @keyframes superCoinFlip {
+        from {
+          transform: rotateZ(0);
+        }
+        to {
+          transform: rotateZ(360deg);
+        }
+      }
+      img {
+        animation: superCoinFlip 5s ease-in-out /*infinite*/;
+      }
+      div {
+        background-color: teal;
+        width: 200px;
+        height: 200px;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      @media screen and (min-width: 601px) and (max-width: 1200px) and (orientation: portrait) {
+        div {
+          background-color: tomato;
+        }
+      }
+      span {
+        font-size: 36px;
+      }
+      @media screen and (orientation: landscape) {
+        span {
+          display: none;
+        }
+      }
+      @media print {
+        body {
+          background-color: tomato;
+        }
+      }
     </style>
   </head>
   <body>
     <a href="#">Go home</a>
+    <img src="img/logo.png" />
+    <div></div>
+    <span>Please flip your phone</span>
   </body>
 </html>
