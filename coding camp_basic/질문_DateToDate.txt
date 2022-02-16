@@ -1,0 +1,31 @@
+2011년 m1월 d1일로부터 2011년 m2월 d2일까지는 총 몇 일이 있는지를 계산하는 프로그램을 작성해보세요. 2011년은 윤년이 아닌 해이기 때문에 2월은 28일까지 있습니다.
+
+date to date 2
+
+m1, d1, m2, d2 = tuple(map(int,input().split()))
+
+#1 m2에서 m1을 빼는 방법
+num_of_days = [0,31,28,31,30,31,30,31,31,30,31,30,31]
+start_days = 0
+end_days = 0
+
+for i in range(m2+1) :
+    end_days += num_of_days[i]
+end_days += d2
+
+for i in range(m1+1) :
+    start_days += num_of_days[i]
+start_days += d1
+
+result = end_days - start_days
+
+print(result)
+
+이거 왜틀린거임?
+-->
+5월 13일이면, 4월까지 num_of_day를 더해야함. 근데 단순하게 나는 5월이면 5월까지 쳐줘야지 생각하고 for문에서 +1을해줬음. ㅋㅋ
+
+더 생각해볼만한것
+-->
+지금 보면 m1과 m2는 같은 계산을 하고 있음. 그럼 뭐다? def을 사용해서 함수로 만들어라~
+함수에 인자가 들어가서 결과를 반환하는 것에 익숙해지자.
