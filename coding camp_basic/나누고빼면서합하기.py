@@ -4,18 +4,15 @@ n, m = tuple(map(int,input().split()))
 
 A = list(map(int,input().split()))
 
-def calcul(a) :
+def calcul(A) :
     hap = 0
     global m
-    if m % 2 != 0 :
-        while m > 1 :
-            hap += a[m]
-            m = m -1
-    elif m % 2 == 0 :
-        while m > 1 :
-            hap += a[m]
-            m = m//2
+    while m :
+        hap += A[m-1] 
+        if m % 2 !=0 :
+            m = m - 1
+        elif m % 2 == 0 :
+            m = m // 2
     return hap
 
-result = calcul(A)
-print(result)
+print(calcul(A))
