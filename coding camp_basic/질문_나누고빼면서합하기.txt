@@ -16,3 +16,26 @@ def calcul(A) :
     return hap
 
 print(calcul(A))
+
+
+이건 왜 틀린걸까?
+아래로 했을 땐 맞았음. 
+n, m = tuple(map(int,input().split()))
+
+A = list(map(int,input().split()))
+
+def calcul(A) :
+    hap = 0
+    global m
+    while m :
+        hap += A[m-1] 
+        if m % 2 !=0 :
+            m = m - 1
+        elif m % 2 == 0 :
+            m = m // 2
+    return hap
+
+print(calcul(A))
+
+틀린이유:
+위에걸로 했을 때는, m이 홀수 일 경우 m-1해주는 거 밖에 못하는데(고정됨) 문제에서 원하는거는 그게 아니라, m이 변했을때 다시 홀수인지 짝수인지 검사해서 -1할지 /2 할지 바뀌는걸 원하였음.
