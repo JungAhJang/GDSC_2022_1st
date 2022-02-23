@@ -1,0 +1,40 @@
+왜 안될까? 왜 값이 2가 나올까?
+
+
+n = int(input())
+arr = [
+    list(map(int,input().split()))
+    for _ in range(n)
+]
+cnt = 0
+result_cnt = 0
+nx, ny = 0, 0 #0행 0열
+
+#행이 dx , 열이 dy
+#동 남 서 북
+dxs , dys = [0, 1, 0, -1], [1, 0, -1, 0]
+
+def in_range(x, y) :
+    return x >= 0 and x < n and y >=0 and y < n
+
+for i in range(4) :
+    for j in range(4):
+        nx = i #0~3행 
+        ny = j #0~3열
+        for dx, dy in zip(dxs, dys) :
+            nx, ny = nx + dx, ny + dy
+            if in_range(nx,ny) and arr[nx][ny] == 1 :
+                cnt += 1
+                # print(cnt)
+        if cnt >= 3 :
+            result_cnt += 1
+            
+        cnt = 0
+
+
+print(result_cnt)
+
+틀린이유:
+nx, ny = nx+dx, ny+dy를 한 게 문제임.
+내가 원하는건, 동쪽으로 이동하고 다시 남쪽으로 이동할때, 원래의 위치(예: 0,0)에서 남쪽으로 이동해야하는데
+원래의 위치+dx가 아닌 nx+dx를 하면 이전의 위치에다가 남쪽으로 이동하게 됨. 따라서 for문 돌 때 x,y와 이동할 때 nx ny는 분리해줘야함
