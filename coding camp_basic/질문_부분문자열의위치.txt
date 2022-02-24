@@ -1,0 +1,32 @@
+string = input()
+find_string = input()
+check = False
+
+#범위 판단
+def in_range(i,j,n) :
+    return i+j < n
+
+def find_idx(string,find_string) :
+    global check
+    n, m = len(string) , len(find_string)
+    for i in range(n) : #입력받은 문자열만큼 반복, 시작점부터문자열길이까지 문자열이 일치하는지
+        cnt = 0
+        for j in range(m) :
+            if in_range(i,j,n) and string[i+j] == find_string[j] :
+                cnt += 1 
+        if cnt == m :
+            idx = i #시작 문자열의 위치 반환
+            return idx
+    return -1
+
+print(find_idx(string,find_string))
+
+아이디어: 문자열이 같으면 cnt를 늘려서, cnt가 문자열 길이만큼이라면 부분 문자열을 찾았다고 짬
+해결 과정:
+중간에 string[i+j] == find_string[j]를 했더니 런타임에러가 났음
+런타임 에러가 난 이유는 i+j가 스트링의 개수인 n이 되거나 넘어버리면, string[n]을 참조할 수 없으므로 범위를 벗어나기 때문
+-->따라서 i+j의 범위를 한정해주는 함수를 만들고 조건문에 넣어줌
+
+해설에서는 (1) 부분문자열이 맞는지 확인하는 함수와 (2) 부분문자열의 위치를 반환하는 함수로 나눠서 작성
+아이디어는 우선 (1)에서 찾고자하는 문자열의 길이가 원래 문자열의 길이보다 넘어버리면 False를 반환하고, 인덱스+j를 했을 때 같지 않으면 False를 반환. 즉, 문자열이 같으면 True를 하는 것보다, 문자열이 다른 조건들을 넣어주고 다른 경우를 모두 통과했을때 True 반환하는 것이 더 빠를 수 있다. 
+나는 True를 반환하는 조건을 작성한거고, 해설은 False를 반환하는 조건을 작성. 해설대로 하면 cnt를 할 이유가 없어짐.
